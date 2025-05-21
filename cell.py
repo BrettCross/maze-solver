@@ -21,26 +21,31 @@ class Cell:
         self.__y1 = y1
         self.__x2 = x2
         self.__y2 = y2
+
+        left_line = Line(Point(x1, y1), Point(x1, y2))
+        top_line = Line(Point(x1, y1), Point(x2, y1))
+        right_line = Line(Point(x2, y1), Point(x2, y2))
+        bottom_line = Line(Point(x1, y2), Point(x2, y2))
+
         if self.has_left_wall:
-            point1 = Point(x1, y1)
-            point2 = Point(x1, y2)
-            line = Line(point1, point2)
-            self.__win.draw_line(line)
+            self.__win.draw_line(left_line)
+        else:
+            self.__win.draw_line(left_line, "white")
+
         if self.has_top_wall:
-            point1 = Point(x1, y1)
-            point2 = Point(x2, y1)
-            line = Line(point1, point2)
-            self.__win.draw_line(line)
+            self.__win.draw_line(top_line)
+        else:
+            self.__win.draw_line(top_line, "white")
+
         if self.has_right_wall:
-            point1 = Point(x2, y1)
-            point2 = Point(x2, y2)
-            line = Line(point1, point2)
-            self.__win.draw_line(line)
+            self.__win.draw_line(right_line)
+        else:
+            self.__win.draw_line(right_line, "white")
+        
         if self.has_bottom_wall:
-            point1 = Point(x1, y2)
-            point2 = Point(x2, y2)
-            line = Line(point1, point2)
-            self.__win.draw_line(line)
+            self.__win.draw_line(bottom_line)
+        else:
+            self.__win.draw_line(bottom_line, "white")
 
     def draw_move(self, to_cell, undo=False):
         fill = "red"

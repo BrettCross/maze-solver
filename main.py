@@ -3,8 +3,8 @@ from maze import Maze
 
 
 def main():
-    num_rows = 12
-    num_cols = 16
+    num_rows = 3
+    num_cols = 3
     margin = 50
     screen_x = 800
     screen_y = 600
