@@ -3,9 +3,6 @@ from maze import Maze
 
 
 def main():
-    MAZE_ROWS = 20
-    MAZE_COLS = 20
-
     num_rows = 12
     num_cols = 16
     margin = 50
