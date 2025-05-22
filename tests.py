@@ -40,6 +40,16 @@ class Tests(unittest.TestCase):
             maze._Maze__cells[9][9].has_bottom_wall,
             False
         )
+    
+    def test_reset_cells_visited(self):
+        maze = Maze(0,0, 2, 2, 20, 20)
+        for i in range(maze._Maze__num_cols):
+            for j in range(maze._Maze__num_rows):
+
+                self.assertEqual(
+                    maze._Maze__cells[i][j].visited,
+                    False
+                )
 
 
 if __name__ == "__main__":
